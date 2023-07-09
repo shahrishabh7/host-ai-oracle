@@ -33,6 +33,7 @@ import { ModelSelect } from './ModelSelect';
 import { SystemPrompt } from './SystemPrompt';
 import { TemperatureSlider } from './Temperature';
 import { MemoizedChatMessage } from './MemoizedChatMessage';
+import { Container, Typography } from '@mui/material';
 
 interface Props {
   stopConversationRef: MutableRefObject<boolean>;
@@ -408,8 +409,28 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                       'Chatbot UI'
                     )}
                   </div>
+                  <div>
+                    <div className="flex h-full flex-col space-y-4 rounded-lg border border-neutral-200 p-4 dark:border-neutral-600">
+                      <Container>
+                        <Typography variant='h4' align='center'>Welcome to HostAI.</Typography>
+                        <Typography variant='h5' align='center'>Ask me anything about short-term rentals</Typography>
+                        <Typography variant='h6' gutterBottom>
+                          Examples:
+                        </Typography>
+                        <Typography variant='h6'>
+                          "What's a good rule of thumb to evaluate a short-term rental deal?"
+                        </Typography>
+                        <Typography variant='h6'>
+                          "My next two weeks aren't booked, how can I use PriceLabs to analyze and decide whether to drop my prices?"
+                        </Typography>
+                        <Typography variant='h6'>
+                          "What are SEO quick tricks I can use to stand out on Airbnb?"
+                        </Typography>
+                      </Container>
+                    </div>
+                  </div>
 
-                  {models.length > 0 && (
+                  {/* {models.length > 0 && (
                     <div className="flex h-full flex-col space-y-4 rounded-lg border border-neutral-200 p-4 dark:border-neutral-600">
                       <ModelSelect />
 
@@ -434,7 +455,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                         }
                       />
                     </div>
-                  )}
+                  )} */}
                 </div>
               </>
             ) : (
